@@ -25,14 +25,48 @@ C .  - - OUTPUT - -                                                   .
 C .        S(8,8)    = CALCULATED STIFFNESS MATRIX                    . 
 C .                                                                   . 
 C . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-      IMPLICIT DOUBLE PRECISION (A-H,O-Z)                               
+      IMPLICIT NONE                               
 C . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 C .   THIS PROGRAM IS USED IN SINGLE PRECISION ARITHMETIC ON CRAY     . 
 C .   EQUIPMENT AND DOUBLE PRECISION ARITHMETIC ON IBM MACHINES,      . 
 C .   ENGINEERING WORKSTATIONS AND PCS. DEACTIVATE ABOVE LINE FOR     . 
 C .   SINGLE PRECISION ARITHMETIC.                                    . 
 C . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-      DIMENSION D(4,4),B(4,8),XX(2,4),S(8,8),XG(4,4),WGT(4,4),DB(4)     
+C      DIMENSION D(4,4),B(4,8),XX(2,4),S(8,8),XG(4,4),WGT(4,4),DB(4)     
+C
+      REAL    :: D(4,4)
+      REAL    :: B(4,8)
+      REAL    :: XX(2,4)
+      REAL    :: S(8,8)
+      REAL    :: XG(4,4)
+      REAL    :: WGT(4,4)
+      REAL    :: DB(4)
+      REAL    :: THIC 
+      REAL    :: YM 
+      REAL    :: PR 
+      REAL    :: XBAR
+      REAL    :: WT
+      REAL    :: STIFF
+      REAL    :: A
+      REAL    :: DET 
+      REAL    :: F 
+      REAL    :: G 
+      REAL    :: H
+      REAL    :: RI 
+      REAL    :: SI 
+      INTEGER :: NEL 
+      INTEGER :: IOUT 
+      INTEGER :: ITYPE 
+      INTEGER :: NINT
+      INTEGER :: LX 
+      INTEGER :: LY
+      INTEGER :: I 
+      INTEGER :: IST 
+      INTEGER :: J 
+      INTEGER :: K 
+      INTEGER :: L 
+
+
 C                                                                       
 C     MATRIX XG STORES GAUSS - LEGENDRE SAMPLING POINTS                 
 C                                                                       
