@@ -65,8 +65,6 @@ C
       INTEGER :: J 
       INTEGER :: K 
       INTEGER :: L 
-
-
 C                                                                       
 C     MATRIX XG STORES GAUSS - LEGENDRE SAMPLING POINTS                 
 C                                                                       
@@ -171,9 +169,32 @@ C .   P R O G R A M                                                   .
 C .     TO EVALUATE THE STRAIN-DISPLACEMENT TRANSFORMATION MATRIX B   . 
 C .     AT POINT (R,S) FOR A QUADRILATERAL ELEMENT                    . 
 C .                                                                   . 
-C . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-      IMPLICIT DOUBLE PRECISION (A-H,O-Z)                               
-      DIMENSION XX(2,4),B(4,8),H(4),P(2,4),XJ(2,2),XJI(2,2)             
+C . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+C 
+      IMPLICIT NONE
+C                                     
+      REAL    :: XX(2,4)
+      REAL    :: B(4,8)
+      REAL    :: H(4)
+      REAL    :: P(2,4)
+      REAL    :: XJ(2,2)
+      REAL    :: XJI(2,2)
+      REAL    :: R 
+      REAL    :: S 
+      REAL    :: RP 
+      REAL    :: SP 
+      REAL    :: RM 
+      REAL    :: SM             
+      REAL    :: DET 
+      REAL    :: DUM
+      REAL    :: XBAR
+      INTEGER :: I 
+      INTEGER :: J
+      INTEGER :: K 
+      INTEGER :: IOUT
+      INTEGER :: NEL 
+      INTEGER :: ITYPE
+      INTEGER :: K2
 C                                                                       
       RP = 1.0 + R                                                      
       SP = 1.0 + S                                                      
