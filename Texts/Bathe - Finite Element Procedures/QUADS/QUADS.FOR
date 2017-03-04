@@ -32,8 +32,6 @@ C .   EQUIPMENT AND DOUBLE PRECISION ARITHMETIC ON IBM MACHINES,      .
 C .   ENGINEERING WORKSTATIONS AND PCS. DEACTIVATE ABOVE LINE FOR     . 
 C .   SINGLE PRECISION ARITHMETIC.                                    . 
 C . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-C      DIMENSION D(4,4),B(4,8),XX(2,4),S(8,8),XG(4,4),WGT(4,4),DB(4)     
-C
       REAL    :: D(4,4)
       REAL    :: B(4,8)
       REAL    :: XX(2,4)
@@ -162,7 +160,6 @@ C
 C                                                                       
       END                                                               
       SUBROUTINE STDM (XX,B,DET,R,S,XBAR,NEL,ITYPE,IOUT)                
-C                                                                       
 C . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 C .                                                                   . 
 C .   P R O G R A M                                                   . 
@@ -170,7 +167,6 @@ C .     TO EVALUATE THE STRAIN-DISPLACEMENT TRANSFORMATION MATRIX B   .
 C .     AT POINT (R,S) FOR A QUADRILATERAL ELEMENT                    . 
 C .                                                                   . 
 C . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-C 
       IMPLICIT NONE
 C                                     
       REAL    :: XX(2,4)
