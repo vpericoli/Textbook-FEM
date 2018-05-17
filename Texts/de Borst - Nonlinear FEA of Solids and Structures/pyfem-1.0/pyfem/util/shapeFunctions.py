@@ -598,7 +598,7 @@ def getElemShapeData( elemCoords , order = 0 , method = 'Gauss' , elemType = 'De
 
     jac = dot ( elemCoords.transpose() , sData.dhdxi )
 
-    if jac.shape[0] is jac.shape[1]:
+    if jac.shape[0] == jac.shape[1]:
       sData.dhdx = dot ( sData.dhdxi , inv( jac ) )
 
     sData.weight = calcWeight( jac ) * weight
